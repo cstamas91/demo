@@ -4,5 +4,13 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Models" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Config.Common\Config.Common.csproj" />
+    </ItemGroup>
+
 
 </Project>
