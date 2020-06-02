@@ -5,6 +5,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Config.Client.Controllers
 {
+    static class ConfigKeys
+    {
+        public static string DbName = "DbName";
+    }
     [ApiController]
     [Route("api/messages")]
     public class MessagesController : ControllerBase
@@ -22,7 +26,7 @@ namespace Config.Client.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            yield return new WeatherForecast { Message = _configuration["DbName"] };
+            yield return new WeatherForecast { Message = _configuration[ConfigKeys.DbName] };
             yield return new WeatherForecast { Message = _configuration["DbServerName"] };
         }
     }

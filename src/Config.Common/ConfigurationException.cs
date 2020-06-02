@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Config.Common.ClientServices
+namespace Config.Common
 {
     public class ConfigurationException : Exception
     {

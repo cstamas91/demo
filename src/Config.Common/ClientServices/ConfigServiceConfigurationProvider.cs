@@ -15,7 +15,7 @@ namespace Config.Common.ClientServices
         
         public override void Load()
         {
-            using var handler = new HttpClientHandler() { PreAuthenticate = true};
+            using var handler = new HttpClientHandler() { PreAuthenticate = true };
             using var configurationClient = new HttpClient(handler) { BaseAddress = _baseAddress };
             
             var response = configurationClient.GetAsync($"api/configs/{Guid.NewGuid()}")
