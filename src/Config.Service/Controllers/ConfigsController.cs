@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Config.Service.Controllers
 {
-    [Route("api/configs")]
+    [Route("api/")]
     [ApiController]
     public class ConfigsController : Controller
     {
@@ -15,10 +15,16 @@ namespace Config.Service.Controllers
             _service = service ?? throw new ArgumentNullException(nameof(service));
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        [HttpGet("configs/{id}")]
+        public async Task<IActionResult> Configs(Guid id)
         {
             return Ok(await _service.GetConfigs(id));
+        }
+
+        [HttpGet("connectionstrings/{id}")]
+        public async Task<IActionResult> ConnectionStrings(Guid id)
+        {
+            return Ok(await _service.GetConnectionStrings(id));
         }
     }
 }

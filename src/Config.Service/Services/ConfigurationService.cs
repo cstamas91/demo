@@ -13,19 +13,24 @@ namespace Config.Service.Services
             {
                 new Configuration
                 {
-                    Key = "DbName", Value = "MyDb"
-                },
-                new Configuration
-                {
-                    Key = "DbServerName", Value = "ProdServer"
-                },
-                new Configuration
-                {
                     Key = "LogTarget", Value = "EventLog"
                 },
                 new Configuration
                 {
                     Key = "LogName", Value = "ConfigClient"
+                }
+            });
+        }
+
+        public Task<IEnumerable<ConnectionString>> GetConnectionStrings(Guid id)
+        {
+            return Task.FromResult<IEnumerable<ConnectionString>>(new []
+            {
+                new ConnectionString
+                {
+                    Name = "Default",
+                    InitialCatalog = "App",
+                    DataSource = "DB"
                 }
             });
         }

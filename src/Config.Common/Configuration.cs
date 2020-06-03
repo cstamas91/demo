@@ -9,4 +9,14 @@ namespace Config.Common
         [JsonPropertyName("value")]
         public string Value { get; set; }
     }
+
+    public class ConnectionString
+    {
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
+        [JsonPropertyName("initialCatalog")]
+        public string InitialCatalog { get; set; }
+        [JsonPropertyName("dataSource")]
+        public string DataSource { get; set; }
+    }
 }
