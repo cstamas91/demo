@@ -26,8 +26,7 @@ namespace Config.Client.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            yield return new WeatherForecast { Message = _configuration[ConfigKeys.DbName] };
-            yield return new WeatherForecast { Message = _configuration["DbServerName"] };
+            yield return new WeatherForecast {Message = _configuration.GetConnectionString("Default")};
         }
     }
 }
